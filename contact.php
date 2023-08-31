@@ -133,22 +133,9 @@
       <div class="form-container">
       <form action="process_form.php" method="post">
             <div class="tile-container">
-            <p>
-                <br>📚 Indywidualne podejście: Zapewniamy spersonalizowane korepetycje dostosowane do Twoich potrzeb i poziomu nauki. Nasi doświadczeni nauczyciele pomogą Ci zrozumieć trudne zagadnienia w sposób, który będzie dla Ciebie klarowny i przystępny.</br>
 
-                <br>🚀 Skuteczna nauka: Nasze metody nauczania opierają się na sprawdzonych strategiach i technikach, które pomogą Ci szybko opanować materiał i utrwalić go na dłużej. Nie trać czasu na nudne powtórki – z nami nauka stanie się pasjonująca przygodą!</br>
+            
 
-                <br>💡 Wsparcie na każdym etapie: Niezależnie od tego, czy potrzebujesz pomocy z konkretnym zadaniem, czy chcesz pracować nad ogólnym rozwojem, jesteśmy tu, aby Ci pomóc. Nasza ekipa chętnie odpowie na Twoje pytania i pomoże rozwiązać wszelkie trudności.</br>
-
-                <br>🌐 Przyjazna platforma online: Nauka powinna być wygodna i dostępna w dowolnym miejscu i czasie. Nasza platforma umożliwia zdalny dostęp do korepetycji, dzięki czemu możesz uczyć się bez względu na swój grafik.</br>
-
-                <br>🏆 Sukces, który przetrwa: Dążymy do tego, aby nie tylko pomóc Ci w osiągnięciu krótkoterminowych celów edukacyjnych, ale także wyposażyć Cię w umiejętności, które posłużą Ci przez całe życie. To inwestycja w przyszłość!</br>
-
-                <br>Nie czekaj – teraz jest najlepszy moment, aby rozpocząć swoją edukacyjną podróż z naszą Akademią Korepetycji. Zdobądź pewność siebie, czerp radość z nauki i otwórz drzwi do nieograniczonych możliwości! Skontaktuj się z nami już dziś i zacznij pracę nad swoim sukcesem razem z nami.</br>
-
-                <br>Zapraszamy serdecznie,</br>
-                <br>Zespół Akademii Korepetycji</br>
-            </p>
             <a class="apply-button" href="index.php">Powrót</a>
             </div>
           </form>
