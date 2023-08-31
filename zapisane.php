@@ -38,9 +38,9 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-        <li><a class="nav-link scrollto" href="index.php">APLIKUJ</a></li>
-        <li><a class="nav-link scrollto" href="about.php">O NAS</a></li> 
-        <li><a class="nav-link scrollto" href="about.php">KONTAKT</a></li>            
+        <li><a class="nav-link scrollto" href="aplikuj.php">APLIKUJ</a></li>
+        <li><a class="nav-link scrollto" href="index.php">O NAS</a></li>
+        <li><a class="nav-link scrollto" href="contact.php">CONTACT</a></li>            
         </ul>
       </nav>
 

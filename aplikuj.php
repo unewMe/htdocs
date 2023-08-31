@@ -31,11 +31,12 @@
       padding: 40px;
       box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
       width: 100%;
-      max-width: 1000px;
+      max-width: 600px;
       margin: 0 auto;
     }
 
-    .form-container h2 {
+    .form-container h2 
+    {
       font-size: 32px;
       margin-bottom: 20px;
     }
@@ -44,7 +45,8 @@
       margin-bottom: 20px;
     }
 
-    .form-group label {
+    .form-group label 
+    {
       font-size: 18px;
       font-weight: bold;
       color: #333;
@@ -53,7 +55,8 @@
     }
 
     .form-group input[type="text"],
-    .form-group input[type="email"] {
+    .form-group input[type="email"] 
+    {
       width: 100%;
       padding: 10px;
       border: 1px ridge #ccc;
@@ -61,7 +64,8 @@
       font-size: 16px;
     }
 
-    .form-group input[type="submit"] {
+    .form-group input[type="submit"] 
+    {
       background-color: #ccc;
       color: #black;
       border: none;
@@ -90,7 +94,7 @@
 
     
 .course-buttons {
-    background-color: #;
+    background-color: #grey;
     width: 250px;
     padding: 10px 20px;
     
@@ -102,6 +106,12 @@
 }
   .form-group button.active {
     background-color: #ccc;
+  }
+
+  .disabled-button {
+    background-color: #ccc !important;
+    color: #555 !important;
+    cursor: not-allowed;
   }
 
   </style>
@@ -122,34 +132,48 @@
         </ul>
       </nav>
 
+      <a class="nav-link scrollto" href="index.html#about"></a>
+
     </div>
   </header><!-- End Header -->
 
   <section id="hero-fullscreen" class="hero-fullscreen d-flex align-items-center">
     <div class="container d-flex flex-column align-items-center position-relative" data-aos="zoom-out">
-      <h2>Dlaczego warto wybrać naszą Akademię Korepetycji?</h2>
+      <h2>Witamy w Akademii Korepetycji</h2>
+      <p>Wypełnij poniższy formularz, a odezwiemy się do Ciebie</p>
+
       <div class="form-container">
-      <form action="process_form.php" method="post">
-            <div class="tile-container">
-            <p>
-                <br>📚 Indywidualne podejście: Zapewniamy spersonalizowane korepetycje dostosowane do Twoich potrzeb i poziomu nauki. Nasi doświadczeni nauczyciele pomogą Ci zrozumieć trudne zagadnienia w sposób, który będzie dla Ciebie klarowny i przystępny.</br>
+        <form action="process_form.php" method="post" id="myForm" onsubmit="return validateForm()">
+          <div class="form-group">
+                <center><p>Przychodzisz do nas jako</p></center>
+                <button type="button" class="course-buttons" data-role="UCZEŃ" name="uczen" >Uczeń</button>
+                <button type="button" class="course-buttons" data-role="KOREPETYTOR" name="korepetytor" >Korepetytor</button>
+                <input type="hidden" id="selectedRole" name="selectedRole" value="" required>
+                <br></br>
+            <input type="text" id="imie" name="imie" placeholder="Imię.." required><br></br>
+            <input type="text" id="nazwisko" name="nazwisko" placeholder="Nazwisko.." required><br></br>
+            <input type="text" id="email" name="email" placeholder="JanKowalski@example.com" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required><br></br>
 
-                <br>🚀 Skuteczna nauka: Nasze metody nauczania opierają się na sprawdzonych strategiach i technikach, które pomogą Ci szybko opanować materiał i utrwalić go na dłużej. Nie trać czasu na nudne powtórki – z nami nauka stanie się pasjonująca przygodą!</br>
-
-                <br>💡 Wsparcie na każdym etapie: Niezależnie od tego, czy potrzebujesz pomocy z konkretnym zadaniem, czy chcesz pracować nad ogólnym rozwojem, jesteśmy tu, aby Ci pomóc. Nasza ekipa chętnie odpowie na Twoje pytania i pomoże rozwiązać wszelkie trudności.</br>
-
-                <br>🌐 Przyjazna platforma online: Nauka powinna być wygodna i dostępna w dowolnym miejscu i czasie. Nasza platforma umożliwia zdalny dostęp do korepetycji, dzięki czemu możesz uczyć się bez względu na swój grafik.</br>
-
-                <br>🏆 Sukces, który przetrwa: Dążymy do tego, aby nie tylko pomóc Ci w osiągnięciu krótkoterminowych celów edukacyjnych, ale także wyposażyć Cię w umiejętności, które posłużą Ci przez całe życie. To inwestycja w przyszłość!</br>
-
-                <br>Nie czekaj – teraz jest najlepszy moment, aby rozpocząć swoją edukacyjną podróż z naszą Akademią Korepetycji. Zdobądź pewność siebie, czerp radość z nauki i otwórz drzwi do nieograniczonych możliwości! Skontaktuj się z nami już dziś i zacznij pracę nad swoim sukcesem razem z nami.</br>
-
-                <br>Zapraszamy serdecznie,</br>
-                <br>Zespół Akademii Korepetycji</br>
-            </p>
-            <a class="apply-button" href="index.php">Powrót</a>
-            </div>
-          </form>
+            <p>Czym jesteś zainteresowany(na)?</p>
+                <div>
+                <button type="button" class="course-buttons" data-school="PODSTAWOWA" >Szkoła podstawowa</button>
+                <button type="button" class="course-buttons" data-school="PONADPODSTAWOWA" >Szkoła ponadpodstawowa</button>
+                <input type="hidden" id="selectedSchool" name="selectedSchool" value="">
+                <br></br>
+                <button type="button" class="course-buttons" data-level="PODSTAWOWY" >Poziom podstawowy</button>
+                <button type="button" class="course-buttons" data-level="ROZSZERZONY" >Poziom rozszerzony</button>
+                <input type="hidden" id="selectedLevel" name="selectedLevel" value="">
+                <br></br>
+                </div>
+                <select id="kursy" name="kursy[]" required>
+                <option value="MATEMATYKA">Matematyka</option>
+                <option value="FIZYKA">Fizyka</option>
+                <option value="CHEMIA">Chemia</option>
+                <option value="ANGIELSKI">Język angielski</option>
+              </select> <br></br>
+            <center><input type="submit" value="Wyślij" id="submit-button" class="disabled-button"></center>
+          </div>
+        </form>
       </div>
     </div>
   </section>
@@ -192,6 +216,23 @@
             });
         });
   </script>
+  
+  <script>
+    function validateForm() {
+        const selectedRole = document.querySelector(".course-buttons[data-role].active");
+        const selectedSchool = document.querySelector(".course-buttons[data-school].active");
+        const selectedLevel = document.querySelector(".course-buttons[data-level].active");
+        const submitButton = document.getElementById("submit-button");
+
+        if (!selectedRole || !selectedSchool || !selectedLevel) {
+            submitButton.classList.add("disabled-button");
+            return false; 
+        }
+        submitButton.classList.remove("disabled-button");
+        return true; 
+      }
+</script>
+
 </body>
 
 </html>
