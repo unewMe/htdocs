@@ -177,16 +177,15 @@
 
 <header id="header" class="header fixed-top" data-scrollto-offset="0">
 <div class="container-fluid d-flex align-items-center justify-content-between">
-      <pev></pev>
-
-      <nav id="navbar" class="navbar">
+<pev></pev>      
+        <nav id="navbar" class="navbar">
         <ul>
         <li><a class="nav-link scrollto" href="aplikuj.php">APLIKUJ</a></li>
         <li><a class="nav-link scrollto" href="index.php">O NAS</a></li> 
         <li><a class="nav-link scrollto" href="contact.php">KONTAKT</a></li>         
         </ul>
-      </nav>
-
+        </nav>
+        <a href="index.html#about"></a>
     </div>
 </header><!-- End Header -->
 
@@ -201,7 +200,7 @@
             <div class="tile-container">
             <h3 style="font-weight: bold;">Korepetytor</h3>
             <p>Jesteś studentem i chcesz dobrze dorobić? Czy jesteś nauczycielem z gabarytem doświadczenia i poszukujesz dodatkowej pracy? U nas każdy znajdzie coś dla siebie - gwarantujemy: Elastyczny grafik, dobrze płatną pracę i miłą atmosferę. Aby dowiedzieć się więcej przejdź do sekcji Aplikuj, a my odezwiemy się do Ciebie.</p>
-            <a class="apply-button" href="index.php">Aplikuj</a>
+            <a class="apply-button" href="aplikuj.php">Aplikuj</a>
             </div>
           </form>
         </div>
@@ -210,7 +209,7 @@
             <div class="tile-container">
             <h3 style="font-weight: bold;">O nas</h3>
             <p>Jesteś studentem i chcesz dobrze dorobić? Czy jesteś nauczycielem z gabarytem doświadczenia i poszukujesz dodatkowej pracy? U nas każdy znajdzie coś dla siebie - gwarantujemy: Elastyczny grafik, dobrze płatną pracę i miłą atmosferę. Aby dowiedzieć się więcej przejdź do sekcji Aplikuj, a my odezwiemy się do Ciebie.</p>
-            <a class="apply-button" href="aplikuj.php">Dowiedz się więcej</a>
+            <a class="apply-button" href="info.php">Dowiedz się więcej</a>
             </div>
           </form>
         </div>
