@@ -123,7 +123,7 @@
       </nav>
 
     </div>
-  </header><!-- End Header -->
+  </header>
 
   <section id="hero-fullscreen" class="hero-fullscreen d-flex align-items-center">
     <div class="container d-flex flex-column align-items-center position-relative" data-aos="zoom-out">
