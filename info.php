@@ -111,7 +111,7 @@
 <body>
 
 <header id="header" class="header fixed-top" data-scrollto-offset="0">
-    <div class="container-fluid d-flex align-items-center justify-content-between">
+<div class="container-fluid d-flex align-items-center justify-content-between">
       <pev></pev>
 
       <nav id="navbar" class="navbar">
@@ -122,8 +122,10 @@
         </ul>
       </nav>
 
+      <a class="nav-link scrollto" href="index.html#about"></a>
+
     </div>
-  </header><!-- End Header -->
+</header><!-- End Header -->
 
   <section id="hero-fullscreen" class="hero-fullscreen d-flex align-items-center">
     <div class="container d-flex flex-column align-items-center position-relative" data-aos="zoom-out">
