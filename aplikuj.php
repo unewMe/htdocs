@@ -132,6 +132,8 @@
         </ul>
       </nav>
 
+      <a class="nav-link scrollto" href="index.html#about"></a>
+
     </div>
   </header><!-- End Header -->
 
