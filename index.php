@@ -203,7 +203,7 @@
             <div class="tile-container">
             <h3 style="font-weight: bold;">Korepetytor</h3>
             <p>Jesteś studentem i chcesz dobrze dorobić? Czy jesteś nauczycielem z gabarytem doświadczenia i poszukujesz dodatkowej pracy? U nas każdy znajdzie coś dla siebie - gwarantujemy: Elastyczny grafik, dobrze płatną pracę i miłą atmosferę. Aby dowiedzieć się więcej przejdź do sekcji Aplikuj, a my odezwiemy się do Ciebie.</p>
-            <a class="apply-button" href="index.php">Aplikuj</a>
+            <a class="apply-button" href="aplikuj.php">Aplikuj</a>
             </div>
           </form>
         </div>
@@ -221,7 +221,7 @@
             <div class="tile-container">
             <h3 style="font-weight: bold;">Uczeń</h3>
             <p>Czy kiedykolwiek marzyłeś o osiągnięciu niesamowitych wyników w nauce? Chciałbyś zdobyć pewność siebie i wyróżnić się w szkole lub na egzaminach? To właśnie teraz jest Twój moment! Nasza Akademia Korepetycji zaprasza Cię do dołączenia do naszej wspaniałej społeczności ambitnych uczniów, gotowych podjąć wyzwanie i osiągnąć sukcesy, o jakich zawsze marzyłeś.</p>
-            <a class="apply-button" href="index.php">Aplikuj</a>
+            <a class="apply-button" href="aplikuj.php">Aplikuj</a>
             </div>
           </form>
         </div>
