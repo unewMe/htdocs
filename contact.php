@@ -165,16 +165,16 @@
   <section id="hero-fullscreen" class="hero-fullscreen d-flex align-items-center">
     <div class="container d-flex flex-column align-items-center position-relative" data-aos="zoom-out">
       <h2>Skontaktuj się z nami</h2>
-          <form action="sending_message.php" method="post" id="contact-form">
+          <form action="sending_message.php" method="post" name="contactForm" onsubmit="return validateForm()" id="contact-form">
             <div class="tile-container">
-            <p>Wyepłnij każde pole formularza aby móc się z nami skontaktować</p>
+            <p>Wypełnij każde pole formularza aby móc się z nami skontaktować</p>
             <div class="form-group">
 
-            <input type="text" id="name" name="name" placeholder="Imię.." required><br></br>
-            <input type="text" id="email" name="email" placeholder="JanKowalski@example.com" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required><br></br>
-            <textarea type="textarea" id="textarea" name="textarea"  placeholder="Wiadomość.." minlength="10" required></textarea><br></br>
+            <input type="text" id="name" name="name" placeholder="Imię.." ><br></br>
+            <input type="text" id="email" name="email" placeholder="JanKowalski@example.com" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" ><br></br>
+            <textarea type="textarea" id="textarea" name="textarea"  placeholder="Wiadomość.." minlength="10" ></textarea><br></br>
 
-            <center><input type="submit" value="Wyślij"></center>
+            <center><input type="submit" id="submit-button" value="Wyślij" ></center>
             </div>
             </div>
           </form>
@@ -192,43 +192,27 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
-        const roleButtons = document.querySelectorAll(".course-buttons[data-role]");
-        const levelButtons = document.querySelectorAll(".course-buttons[data-level]");
-        const schoolButtons = document.querySelectorAll(".course-buttons[data-school]");
-        const selectedRoleInput = document.querySelector("#selectedRole");
-        const selectedSchoolInput = document.querySelector("#selectedSchool");
-        const selectedLevelInput = document.querySelector("#selectedLevel");
+    var isAlertShown = false;
+    function validateForm() {
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var message = document.getElementById('textarea').value.trim();
 
-        roleButtons.forEach(button => {
-            button.addEventListener("click", () => {
-                roleButtons.forEach(btn => btn.classList.remove("active"));
-                button.classList.add("active");
-                selectedRoleInput.value = button.getAttribute("data-role");
-            });
-        });
-
-        schoolButtons.forEach(button => {
-            button.addEventListener("click", () => {
-                schoolButtons.forEach(btn => btn.classList.remove("active"));
-                button.classList.add("active");
-                selectedSchoolInput.value = button.getAttribute("data-school");
-            });
-        });
-
-        levelButtons.forEach(button => {
-            button.addEventListener("click", () => {
-                levelButtons.forEach(btn => btn.classList.remove("active"));
-                button.classList.add("active");
-                selectedLevelInput.value = button.getAttribute("data-level");
-            });
+    if (name === "" || email === "" || message === "") {
+      return false;
+    }
+    return true;
+    }
+    
+    document.getElementById('contact-form').addEventListener('submit', function (event) {
+            if (!validateForm()) {
+                event.preventDefault(); // Zatrzymaj wysłanie formularza
+            } else {
+                document.getElementById('contact-form').style.display = 'none';
+                document.getElementById('loading').style.display = 'block';
+            }
         });
   </script>
-  <script>
-        document.getElementById('contact-form').addEventListener('submit', function () {
-            document.getElementById('contact-form').style.display = 'none';
-            document.getElementById('loading').style.display = 'block';
-        });
-    </script>
 </body>
 
 </html>
