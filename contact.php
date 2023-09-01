@@ -60,7 +60,17 @@
       border-radius: 4px;
       font-size: 16px;
     }
+    .form-group textarea {
+      width: 100%;
+      height: 200px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      overflow-wrap: break-word;
+    }
 
+    
     .form-group input[type="submit"] {
       background-color: #ccc;
       color: #black;
@@ -89,8 +99,8 @@
     font-size: 16px; }
 
     
-.course-buttons {
-    background-color: #;
+    .course-buttons {
+    background-color: #grey;
     width: 250px;
     padding: 10px 20px;
     
@@ -104,8 +114,33 @@
     background-color: #ccc;
   }
 
-  </style>
+  .disabled-button {
+    background-color: #ccc !important;
+    color: #555 !important;
+    cursor: not-allowed;
+  }
 
+  #loading {
+            display: none;
+            text-align: center;
+  }
+
+  #spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid #007bff;
+            animation: spin 2s linear infinite;
+  }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+  }
+
+    </style>
 </head>
 
 <body>
@@ -129,17 +164,24 @@
 
   <section id="hero-fullscreen" class="hero-fullscreen d-flex align-items-center">
     <div class="container d-flex flex-column align-items-center position-relative" data-aos="zoom-out">
-      <h2>Dlaczego warto wybrać naszą Akademię Korepetycji?</h2>
-      <div class="form-container">
-      <form action="process_form.php" method="post">
+      <h2>Skontaktuj się z nami</h2>
+          <form action="sending_message.php" method="post" id="contact-form">
             <div class="tile-container">
+            <p>Wyepłnij każde pole formularza aby móc się z nami skontaktować</p>
+            <div class="form-group">
 
-            
+            <input type="text" id="name" name="name" placeholder="Imię.." required><br></br>
+            <input type="text" id="email" name="email" placeholder="JanKowalski@example.com" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required><br></br>
+            <textarea type="textarea" id="textarea" name="textarea"  placeholder="Wiadomość.." minlength="10" required></textarea><br></br>
 
-            <a class="apply-button" href="index.php">Powrót</a>
+            <center><input type="submit" value="Wyślij"></center>
+            </div>
             </div>
           </form>
-      </div>
+          <div id="loading">
+        <div id="spinner"></div>
+        <p>Wysyłanie...</p>
+    </div>
     </div>
   </section>
 
@@ -181,6 +223,12 @@
             });
         });
   </script>
+  <script>
+        document.getElementById('contact-form').addEventListener('submit', function () {
+            document.getElementById('contact-form').style.display = 'none';
+            document.getElementById('loading').style.display = 'block';
+        });
+    </script>
 </body>
 
 </html>
