@@ -1,7 +1,10 @@
 <?php
 
-session_start();
-
+sleep(2);
+    echo '<script>
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("myForm").style.display = "block";
+          </script>';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -29,11 +32,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Wstawianie danych do bazy danych
     $sql = "INSERT INTO dane (ROLA, SZKOŁA, POZIOM, IMIE, NAZWISKO, EMAIL, PRZEDMIOT) VALUES ('$selectedRole','$selectedSchool','$selectedLevel', '$imie', '$nazwisko', '$email', '$kursy')";
 
+    
+
     if ($conn->query($sql) === TRUE) {
         $_SESSION['SENDED'] = 1;
-        header('Location: /zapisane.php');
+        header('Location: /index.php');
     } else {
-        echo "Wypełnij fromularz";
+        echo "BŁĄD";
     }
 
     // Zamykanie połączenia z bazą danych

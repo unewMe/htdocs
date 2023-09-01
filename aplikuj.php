@@ -114,6 +114,24 @@
     cursor: not-allowed;
   }
 
+  #loading {
+            display: none;
+            text-align: center;
+  }
+  #spinner {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid #007bff;
+            animation: spin 2s linear infinite;
+  }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+  }
   </style>
 
 </head>
@@ -141,18 +159,17 @@
     <div class="container d-flex flex-column align-items-center position-relative" data-aos="zoom-out">
       <h2>Witamy w Akademii Korepetycji</h2>
       <p>Wypełnij poniższy formularz, a odezwiemy się do Ciebie</p>
-
-      <div class="form-container">
         <form action="process_form.php" method="post" id="myForm" onsubmit="return validateForm()">
-          <div class="form-group">
+        <div class="form-container">  
+        <div class="form-group">
                 <center><p>Przychodzisz do nas jako</p></center>
                 <button type="button" class="course-buttons" data-role="UCZEŃ" name="uczen" >Uczeń</button>
                 <button type="button" class="course-buttons" data-role="KOREPETYTOR" name="korepetytor" >Korepetytor</button>
                 <input type="hidden" id="selectedRole" name="selectedRole" value="" required>
                 <br></br>
-            <input type="text" id="imie" name="imie" placeholder="Imię.." required><br></br>
-            <input type="text" id="nazwisko" name="nazwisko" placeholder="Nazwisko.." required><br></br>
-            <input type="text" id="email" name="email" placeholder="JanKowalski@example.com" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required><br></br>
+            <input type="text" id="imie" name="imie" placeholder="Imię.." ><br></br>
+            <input type="text" id="nazwisko" name="nazwisko" placeholder="Nazwisko.." ><br></br>
+            <input type="text" id="email" name="email" placeholder="JanKowalski@example.com" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" ><br></br>
 
             <p>Czym jesteś zainteresowany(na)?</p>
                 <div>
@@ -172,10 +189,14 @@
                 <option value="ANGIELSKI">Język angielski</option>
               </select> <br></br>
             <center><input type="submit" value="Wyślij" id="submit-button" class="disabled-button"></center>
-          </div>
-        </form>
-      </div>
+        </div>
     </div>
+    </form>
+        <div id="loading">
+          <div id="spinner"></div>
+          <p>Twoja prośba jest przesyłana</p>
+          </div>
+        </div>
   </section>
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -218,19 +239,32 @@
   </script>
   
   <script>
+    var isAlertShown = false;
     function validateForm() {
         const selectedRole = document.querySelector(".course-buttons[data-role].active");
         const selectedSchool = document.querySelector(".course-buttons[data-school].active");
         const selectedLevel = document.querySelector(".course-buttons[data-level].active");
         const submitButton = document.getElementById("submit-button");
+        var name = document.getElementById('imie').value.trim();
+        var email = document.getElementById('email').value.trim();
+        var last_name = document.getElementById('nazwisko').value.trim();
 
-        if (!selectedRole || !selectedSchool || !selectedLevel) {
+
+        if (!selectedRole || !selectedSchool || !selectedLevel || !name || !email || !last_name) {
             submitButton.classList.add("disabled-button");
             return false; 
         }
         submitButton.classList.remove("disabled-button");
+        
         return true; 
       }
+
+        document.getElementById('myForm').addEventListener('submit', function (event) {
+          if(validateForm()) {
+          document.getElementById('myForm').style.display = 'none';
+          document.getElementById('loading').style.display = 'block'; }
+      });
+
 </script>
 
 </body>
