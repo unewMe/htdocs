@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.png">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -117,7 +118,7 @@
       <nav id="navbar" class="navbar">
         <ul>
         <li><a class="nav-link scrollto" href="aplikuj.php">APLIKUJ</a></li>
-        <li><a class="nav-link scrollto" href="index.php">O NAS</a></li> 
+        <li><a class="nav-link scrollto" href="index.php">STRONA GŁÓWNA</a></li> 
         <li><a class="nav-link scrollto" href="contact.php">KONTAKT</a></li>         
         </ul>
       </nav>
